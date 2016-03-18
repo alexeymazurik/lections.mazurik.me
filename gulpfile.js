@@ -75,7 +75,7 @@ gulp.task('server', function(){
 
 gulp.task('favicon', function(){
 	gulp.src('/app/favicon.ico')
-		.pipe('/dist');
+		.pipe('/dist/');
 });
 
 gulp.task('default', [
