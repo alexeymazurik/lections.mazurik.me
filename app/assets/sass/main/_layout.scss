@@ -1,0 +1,246 @@
+@font-face {
+  font-family: "Fregat-Regular";
+  src: url("../fonts/Fregat_regular.otf");
+}
+
+@font-face {
+  font-family: "Fregat-Bold";
+  src: url("../fonts/Fregat_bold.otf");
+}
+
+$fregat-bold: "Fregat-Bold", Helvetica, open-sans;
+$fregat-regular: "Fregat-Regular", Helvetica, open-sans;
+
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fregat-bold;
+}
+
+header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  height: 80px;
+  z-index: 100;
+  box-sizing: border-box;
+
+  background: rgba(235,235,235,1);
+  background: -moz-linear-gradient(top, rgba(235,235,235,1) 0%, rgba(245,245,245,1) 50%, rgba(235,235,235,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,235,235,1)), color-stop(50%, rgba(245,245,245,1)), color-stop(100%, rgba(235,235,235,1)));
+  background: -webkit-linear-gradient(top, rgba(235,235,235,1) 0%, rgba(245,245,245,1) 50%, rgba(235,235,235,1) 100%);
+  background: -o-linear-gradient(top, rgba(235,235,235,1) 0%, rgba(245,245,245,1) 50%, rgba(235,235,235,1) 100%);
+  background: -ms-linear-gradient(top, rgba(235,235,235,1) 0%, rgba(245,245,245,1) 50%, rgba(235,235,235,1) 100%);
+  background: linear-gradient(to bottom, rgba(235,235,235,1) 0%, rgba(245,245,245,1) 50%, rgba(235,235,235,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ebebeb', GradientType=0 );
+
+  .content {
+    width: 960px;
+    margin: 0 auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 6;
+
+    a img {
+      height: 40px;
+
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 1.1em;
+
+      li {
+        display: inline-block;
+
+        a {
+          display: inline-block;
+          text-decoration: none;
+          color: black;
+          padding: 5px 0;
+        }
+
+        &.active {
+          border-bottom: 3px solid #1899D7;
+        }
+      }
+    }
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fregat-regular;
+  min-width: 960px;
+}
+
+.jumbotron {
+  margin: 0;
+  img {
+    width: 100%;
+  }
+}
+
+.topic {
+  margin: 0;
+  padding: 0 0 20px;
+}
+
+.lections {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 315px;
+    height: 315px;
+    position: relative;
+
+    &:hover {
+      .curtain {
+        display: flex;
+      }
+    }
+
+    .link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .curtain {
+      position: absolute;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(0,0,0,0.6);
+      color: white;
+
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      text-align: center;
+
+      cursor: pointer;
+
+      z-index: 3;
+
+      img {
+        margin-bottom: 10px;
+        width: 20%;
+      }
+    }
+
+    .topic-content {
+      img {
+        width: 100%;
+      }
+
+      .content-curtain {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(54, 54, 54, 0.4);
+      }
+
+      .titles {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: white;
+        margin: 0 0 10px 10px;
+        
+        span {
+          display: block;
+          font-family: $fregat-bold;
+
+          &.title {
+            font-weight: 600;
+            font-size: 2.5em;
+          }
+
+          &.sub-title {
+            font-size: 2.3em;
+          }
+        }
+      }
+
+
+      //.title {
+      //  position: absolute;
+      //  bottom: 0;
+      //  left: 0;
+      //  margin: 20px;
+      //  font-size: 1.2em;
+      //  z-index: 2;
+      //}
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px 0;
+  text-align: center;
+  background: #27313B;
+  color: #b8b8b8;
+  height: 120px;
+
+  .social-links {
+    a {
+      display: inline-block;
+      color: #2a2a2a;
+      background: #8c8c8c;
+      padding: 5px;
+      margin: 0 10px;
+      font-size: 1.1em;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      line-height: 20px;
+
+      &:hover {
+        background: darken(#1899D7, 10);
+        color: white;
+      }
+    }
+  }
+}

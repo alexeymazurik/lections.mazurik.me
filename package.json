@@ -1,0 +1,27 @@
+{
+  "name": "alexeymazurik.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexeymazurik/alexeymazurik.github.io.git"
+  },
+  "author": "Mazurik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexeymazurik/alexeymazurik.github.io/issues"
+  },
+  "homepage": "https://github.com/alexeymazurik/alexeymazurik.github.io#readme"
+}

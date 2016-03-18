@@ -1,0 +1,22 @@
+{
+  "name": "alexeymazurik.github.io",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Mazurik"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/alexeymazurik/alexeymazurik.github.io",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.5.0",
+    "jquery": "^2.2.1"
+  }
+}
