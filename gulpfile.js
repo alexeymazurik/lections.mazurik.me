@@ -73,12 +73,18 @@ gulp.task('server', function(){
   gulp.watch(paths.filesToMove, ['html']).on('change', browserSync.reload);
 });
 
+gulp.task('favicon', function(){
+	gulp.src('/app/favicon.ico')
+		.pipe('/dist');
+});
+
 gulp.task('default', [
   'vendor-css',
   'vendor-js',
   'scripts',
   'sass',
   'html',
+	'favicon',
   'fonts',
   'images',
   'hosts'
