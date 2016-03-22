@@ -57,15 +57,15 @@ some_function(5, 15, function (num) {
 ## Structure
 ```js
 gulp.task('TASK_NAME', function(){
-  gulp.src(css_files)
+  gulp.src(['app/files/file1.dat', 'app/files/file2.dat'])
     .pipe(something())
     .pipe(gulp.dest('DESTINATION_PATH'));
 });
 ```
-## Example
+## Real example
 ```js
 gulp.task('styles', function(){
-  gulp.src(css_files)
+  gulp.src(['app/css/style1.css', 'app/css/style2.css'])
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('./public/css'));
 });
@@ -80,19 +80,19 @@ var gulp    = require('gulp'),
     concat  = require('gulp-concat');
 
 gulp.task('styles', function(){
-  gulp.src('./bower_components/bootstrap/dist/css/bootstrap.css')
+  gulp.src('bower_components/bootstrap/dist/css/bootstrap.css')
     .pipe(concat('vendor.css'))
-    .pipe(gulp.dest('/public/assets/css'));
+    .pipe(gulp.dest('public/assets/css'));
 });
 
 gulp.task('fonts', function(){
-  gulp.src('./bower_components/bootstrap/dist/fonts/*')
-    .pipe(gulp.dest('/public/assets/fonts'));
+  gulp.src('bower_components/bootstrap/dist/fonts/*')
+    .pipe(gulp.dest('public/assets/fonts'));
 });
 
 gulp.task('html', function(){
   gulp.src('index.html')
-      .pipe(gulp.dest('/public/'));
+      .pipe(gulp.dest('public'));
 });
 
 gulp.task('default', ['styles', 'fonts', 'html']);
@@ -169,21 +169,21 @@ $ npm install --save browser-sync
 var browserSync = require('browser-sync').create();
 
 var css_files = [
-  "/app/assets/css/*.css"
+  "app/assets/css/*.css"
 ];
 
 gulp.task('server', function(){
   browserSync.init({
-		server: {
-			baseDir: './public'
-		}
-	});
+	  server: {
+		  baseDir: 'public'
+	  }
+  });
 
   gulp.watch("app/index.html", ['html']).on('change', browserSync.reload);
   gulp.watch(css_files, ['styles']).on('change', browserSync.reload);
 });
 
-gulp.task('serve', ['default', 'server'];
+gulp.task('serve', ['default', 'server']);
 ```
 ---
 class: center, middle
@@ -198,23 +198,23 @@ var gulp    		= require('gulp'),
     browserSync 	= require('browser-sync').create();
 
 var css_files = [
-		'./bower_components/bootstrap/dist/css/bootstrap.css',
-		'/app/assets/css/*.css'
+	  'bower_components/bootstrap/dist/css/bootstrap.css',
+	  'app/assets/css/*.css'
 	],
 	js_files = [
-		'./bower_components/jquery/dist/jquery.js',
-		'./bower_components/bootstrap/dist/js/bootstrap.js'
+	  'bower_components/jquery/dist/jquery.js',
+	  'bower_components/bootstrap/dist/js/bootstrap.js'
 	],
-	font_files = ['./bower_components/bootstrap/dist/fonts/*'];
+	font_files = ['bower_components/bootstrap/dist/fonts/*'];
 
 gulp.task('server', function(){
   browserSync.init({
-		server: {
-			baseDir: './public'
-		}
-	});
+	  server: {
+		  baseDir: 'public'
+	  }
+  });
 
-  gulp.watch("app/index.html", ['html']).on('change', browserSync.reload);
+  gulp.watch('app/index.html', ['html']).on('change', browserSync.reload);
   gulp.watch(css_files, ['styles']).on('change', browserSync.reload);
 });
 
@@ -223,25 +223,25 @@ gulp.task('server', function(){
 # gulpfile.js (part 2)
 ```js
 gulp.task('styles', function(){
-  gulp.src('./bower_components/bootstrap/dist/css/bootstrap.css')
-  	.pipe(concat('styles.css'))
-  	.pipe(gulp.dest('/public/assets/css'));
+  gulp.src(css_files)
+    .pipe(concat('styles.css'))
+    .pipe(gulp.dest('public/assets/css'));
 });
 
 gulp.task('fonts', function(){
   gulp.src(font_files)
-  	.pipe(gulp.dest('/public/assets/fonts'));
+    .pipe(gulp.dest('public/assets/fonts'));
 });
 
 gulp.task('scripts', function(){
-	gulp.src(js_files)
-    	.pipe(concat('scripts.js'))
-    	.pipe(gulp.dest('/public/assets/js'));
+  gulp.src(js_files)
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('public/assets/js'));
 });
 
 gulp.task('html', function(){
   gulp.src('index.html')
-  	.pipe(gulp.dest('/public/'));
+    .pipe(gulp.dest('public'));
 });
 
 gulp.task('default', ['html', 'fonts', 'styles', 'scripts']);
@@ -362,7 +362,8 @@ Create other project with Grunt as bundler. Name it 'grunt-project' and share wi
 5. **Hints** <br>
 For hints you can write to me also. <br>
 **Bootstrap**: you should write own CSS in **`styles.css`** <br>
-**Gruntfile.js**: [Getting started with Grunt](http://gruntjs.com/getting-started)
+**Gruntfile.js**: [Getting started with Grunt](http://gruntjs.com/getting-started) <br>
+**Tasks**: Pay attention to *paths* you want to handle with.
 ---
 class: center, middle
 
