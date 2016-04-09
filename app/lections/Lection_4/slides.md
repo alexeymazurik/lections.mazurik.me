@@ -304,9 +304,9 @@ http://flexboxfroggy.com/
 2. ENG: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 ---
 # Homework
-<p class="center">
+<a href="/images/test-chat.png" class="center">
   <img width="100%" src="/images/test-chat.png" />
-</p>
+</a>
 ---
 class: center, middle
 
