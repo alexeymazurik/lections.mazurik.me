@@ -26,5 +26,26 @@ h1, h2, h3 {
 .course.smaller ol li { font-size: 1.1em; margin: 40px 0;}
 .center.images img { margin: 0 40px; }
 
+.columns {
+  display: flex;
+  justify-content: space-around;
+
+  .column {
+    &:first-child {
+      margin-right: 20px;
+    }
+
+    pre {
+      background: #ECECEC;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+}
+
+.grey {
+  color: #E0E0E0 !important;
+}
+
 .red { color: #B51810; }
 .green { color: #008900; }
